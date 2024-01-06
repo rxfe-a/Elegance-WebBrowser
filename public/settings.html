@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@300;400&family=Open+Sans&family=Raleway:wght@300&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+    </style>
+    <link rel="stylesheet" href="assets/css/basic.css" id="CSS">
+</head>
+<body>
+    <div class="elegance-div">
+        <img src="./assets/img/E_logo.png">
+        <div class="otherside">
+            <p class="title">Elegance</p>
+            <p class="mq3">Version 0.8</p>
+            <p class="mq3">Ultraviolet Version : 1.0.10</p>
+            <p class="mq3">Rammerhead Version : v1.2.41-holy.5</p>
+            <p class="mq3" id="ua">You are on a</p>
+        </div>
+    </div>
+    <div class="setting-div">
+        <p class="title" style="margin-left: 15px;">Proxy Type</p>
+        <select id="ProxyType" class="dropdown" name="dropdown">
+            <option value="uv">Ultraviolet</option>
+            <option value="rh">Rammerhead</option>
+            <option value="dn">Dynamic</option>
+            <option value="dip">Dip</option>
+          </select>
+    </div>
+    <div class="setting-div">
+        <p class="title" style="margin-left: 15px;">Search Engine</p>
+        <select id="searchengine" class="dropdown" name="dropdown">
+            <option value="google">Google</option>
+            <option value="bing">Bing</option>
+            <option value="duckduck-go">duckduck-go</option>
+          </select>
+    </div>
+    <div class="setting-div">
+        <p class="title" style="margin-left: 15px;">Theme</p>
+        <select id="theeme" class="dropdown" name="dropdown">
+            <option value="White">White Theme</option>
+            <option value="dark">Dark Theme</option>
+          </select>
+    </div>
+    <div class="setting-div">
+        <p class="title" style="margin-left: 15px;">Search Background</p>
+        <input id="Search_BG" type="text" style="height: 40px; width: 300px; margin-left: auto; border-radius: 15px;" placeholder="assets/img/l-bg.jpg">
+    </div>
+    <button onclick="apply()" style="width: 400px; height: 50px; margin-top: 15px; border: none; background: linear-gradient(to right, rgb(128, 185, 29) 0%, rgb(83, 162, 35) 100%); color: white; font-weight: 1200; border-radius: 8px;"> apply </button>
+    <script src="assets/js/settings.js"></script>
+</body>
+</html>

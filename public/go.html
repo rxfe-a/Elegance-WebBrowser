@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="assets/css/go.css">
+    <script src="assets/js/go.js"></script>
+    <script src="assets/js/rammer.js" type="module"></script>
+
+    <title>go.html</title>
+</head>
+<body>
+    <script>
+        setTimeout(() => {
+            const kysnigga = localStorage.getItem('settings');
+const kysfag = JSON.parse(kysnigga);
+const kysretard = kysfag.Theme;
+
+if (kysretard == 'white') {
+    document.body.style.backgroundColor = 'white';
+    document.getElementById('warning').style.backgroundColor = '#FFFFFF'; 
+    document.getElementById('warning').style.color = '#000000';  // Corrected color code
+}
+
+        }, 20);
+    </script>
+    <div style="display: none; width: 100%; height: 80vh; align-items: center; justify-content: center; text-align: center; color: white; flex-direction: column;" id="warning">
+        <img src="./assets/img/warn.png" style="width: 90px; height: 90px; margin-bottom: 15px;">
+        <h1>Error!</h1>
+        <p>An error occured and we could not load the content!</p>
+        <p id="elegance_loading_error" style="color: red;"><i>error</i></p>
+        <p><i>Possible Fixes?</i></p>
+        <button onclick="RegisterSW()"> Register Service Workers?</button>
+    </div>
+    <input type="t  ext" id="EleganceSessionID" style="display: none;">
+    <div class="container mb-5">
+        <p class="mb-3 fw-bold text-danger" id="error-text" style="display: none">Error: some text</p>
+        <div class="input-group mb-2" id="password-wrapper" style="display: none">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Enter password</span>
+            </div>
+            <input type="password" class="form-control" id="session-password"
+                placeholder="Password is given by host of this site.">
+        </div>
+        <div class="input-group mb-2" style="display: none;">
+            <span class="input-group-text">Enter URL</span>
+            <input type="text" class="form-control" id="session-url" placeholder="https://www.google.com/">
+            <button class="btn btn-success" type="button" id="session-go">Go!</button>
+        </div>
+        <div class="input-group mb-4" style="display: none;">
+            <span class="input-group-text">Session ID</span>
+            <input readonly type="text" class="form-control disable-text" id="session-id"
+                placeholder="click on 'Create new session ID' or 'Fill in existing session ID' from below">
+            <button class="btn btn-secondary" type="button" id="session-create-btn">Create new session ID</button>
+        </div>
+        <button class="btn btn-outline-secondary" id="session-advanced-toggle" style="display: none;">Show advanced options</button>
+        <div class="mt-2 mb-4" id="session-advanced-container" style="display: none">
+            <div class="form-check mb-1">
+                <input class="form-check-input" type="checkbox" value="" id="session-shuffling" checked>
+                <label class="form-check-label" for="session-shuffling">Enable URL Shuffling</label>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">HTTP Proxy</span>
+                <input type="text" class="form-control" id="session-httpproxy"
+                    placeholder="http://username:password@proxyipaddress:proxyport">
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center m-0" style="display: none;">
+        <table class="table w-75 table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Session ID</th>
+                    <th>Created on</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
+    <!---->
+    <script src="dynamic/dynamic.config.js"></script>
+    <script src="dynamic/dynamic.worker.js"></script>
+    <script src="dynamic/dynamic.client.js"></script>
+    <script src="dynamic/dynamic.html.js"></script>
+    <!---->
+    <script src="dip/dip.client.js"></script>
+    <script src="dip/dip.handler.js"></script>
+    <script src="dip/dip.config.js"></script>
+    <script src="dip/dip.worker.js"></script>
+</body>
+</html>

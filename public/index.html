@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<style>
+ 
+    body {
+        margin: 0;
+        align-items: center;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    }
+    
+</style>
+<link rel="stylesheet" href="assets/css/basic.css" id="CSS">
+</head>
+<body>
+    <input id="visible-tab" type="text" style="display: none;">
+    <div class="sideBarDiv">
+        <img src="./assets/img/E_logo.png">
+        <div class="ico">
+            <button id="music">
+                <span class="material-symbols-outlined">
+                    music_note
+                    </span>
+            </button>
+            <button id="ai">
+                <span class="material-symbols-outlined">
+                    robot_2
+                    </span>
+            </button>
+            <button id="message">
+                <span class="material-symbols-outlined">
+                    chat
+                    </span>
+            </button>
+            <button id="extras">
+                <span class="material-symbols-outlined">
+                    more_horiz
+                    </span>
+            </button>
+        </div>
+    </div>
+    <div class="broswerDiv" id="browser">
+        <div class="tabholder" id="tab_holder">
+            <button class="add" id="add" onclick="NewTab()"><p>+</p></button>
+        </div>
+        <div class="url-bars">
+            <button class="refresh" onclick="back()">
+                <span class="material-symbols-outlined">
+                    arrow_back
+                    </span>
+            </button>
+            <button class="refresh" onclick="forward()">
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                    </span>
+            </button>
+            <button class="refresh" onclick="refresh()">
+                <span class="material-symbols-outlined">
+                    refresh
+                    </span>
+            </button>
+            <button class="refresh" onclick="home()">
+                <span class="material-symbols-outlined">
+                    home
+                    </span>
+            </button>
+            <input type="text" class="url-input" id="url-bar" placeholder="Search Google or Type URL" onkeydown="handleKeyPress(event)">
+            <button class="refresh" onclick="inspect()">
+                <span class="material-symbols-outlined">
+                    code_blocks
+                    </span>
+            </button>
+            <button class="refresh" onclick="more()" id="butt">
+                <span class="material-symbols-outlined">
+                    more_vert
+                    </span>
+            </button>
+        </div>
+    </div>
+    <div class="menu" id="m_enu">
+        <button onclick="NewTab()"> New Tab</button>
+        <button id="fullscreen"> Fullscreen</button>
+        <button onclick="inspect()"> Inspect</button>
+        <button id="settings"> Settings</button>
+        <button onclick="home()"> Home</button>
+        <button onclick="print()"> Print</button>
+    </div>
+    <script src="assets/js/browser.js"></script>
+</body>
+</html>

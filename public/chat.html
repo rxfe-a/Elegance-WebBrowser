@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+    
+    body {
+      background-color: #0e0e0e;
+      color: #333;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .chat-container {
+      max-width: 500px;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #1b1b1b;
+    }
+
+    .chat {
+      padding: 20px;
+      overflow-y: auto;
+      max-height: 400px;
+    }
+
+    .message {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .user-message {
+      margin-top: 15px;
+      align-items: flex-end;
+    }
+
+    .message-text {
+      max-width: 70%;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .user-message .message-text {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+
+    .ai-message .message-text {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    input {
+      background-color: #333;
+      width: 88%;
+      padding: 10px;
+      color: white;
+      font-size: 1em;
+      margin: 0 20px 20px 20px;
+      border: 1px solid #2e2e2e;
+      border-radius: 5px;
+    }
+
+    button {
+      width: calc(100% - 40px);
+      padding: 10px;
+      font-size: 1em;
+      margin: 0 20px 20px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <title>Chocolate</title>
+</head>
+<body>
+  <h1>ChatGPT</h1>
+  <div class="chat-container">
+    <div class="chat" id="chat">
+      <div class="message ai-message">
+        <div class="message-text">Hello! What can I assist you with today?</div>
+      </div>
+    </div>
+    <input type="text" id="question" placeholder="Ask your question...">
+    <button onclick="AskAI()">Send</button>
+  </div>
+  <script>
+    let amnt = 0
+amnt = amnt - 1
+async function AskAI() {
+      const question = document.getElementById('question').value;
+      const userMessage = document.createElement('div');
+      document.getElementById('chat').appendChild(userMessage);
+      const userMessageText = document.createElement('div');
+      userMessage.className = 'message user-message';
+      userMessage.appendChild(userMessageText);
+      userMessageText.className = 'message-text';
+      userMessageText.textContent = question;
+      try {
+        amnt = amnt + 1
+        const aiMessage = document.createElement('div');
+      document.getElementById('chat').appendChild(aiMessage);
+      const aiMessageText = document.createElement('div');
+      aiMessage.className = 'message ai-message';
+      aiMessage.appendChild(aiMessageText);
+      aiMessageText.className = 'message-text';
+      aiMessageText.textContent = 'im thinking...';
+
+        const response = await fetch('/ask', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ question })
+        });
+        const result = await response.json();
+        const data = JSON.stringify(result);
+        console.log(data)
+        setTimeout(() => {
+          aiMessageText.textContent = JSON.parse(data).choices[0].message.content;
+        }, 900);
+      } catch (error) {
+        console.error(error);
+        const aiMessage = document.createElement('div');
+      document.getElementById('chat').appendChild(aiMessage);
+      const aiMessageText = document.createElement('div');
+      aiMessage.className = 'message ai-message';
+      aiMessage.appendChild(aiMessageText);
+      aiMessageText.className = 'message-text';
+      aiMessageText.textContent = 'an error occured';
+      }
+    }
+  </script>
+</body>
+</html>
+
+<!--
+
+
+  <div class="message user-message">
+        <div class="message-text">Hello! What can I assist you with today?</div>
+      </div>
+-->
