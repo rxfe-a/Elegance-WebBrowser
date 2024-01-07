@@ -10,6 +10,6 @@ self.__DIP.config = {
   worker: true,
   bare: {
     version: 2,
-    path: '/bare/',
+    path: 'https://b.rxfe.xyz/',
   }
 };

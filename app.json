@@ -1,8 +1,0 @@
-{
-    "name": "elegance-js",
-    "description": "?",
-    "repository": "https://github.com/rxfe-a/Elegance-WebBrowser",
-    "logo": "https://raw.githubusercontent.com/rxfe-a/Elegance-WebBrowser/main/public/assets/img/E_logo.png",
-    "keywords": ["honeybun", "microwave"],
-    "image": "heroku/nodejs"
-}
