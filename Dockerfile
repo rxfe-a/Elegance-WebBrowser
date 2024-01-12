@@ -1,7 +1,7 @@
-FROM node:iron-bookworm-slim
+FROM node:20.5.1-bullseye-slim
 ENV NODE_ENV=production
 
-WORKDIR /app
+WORKDIR /public
 
 COPY ["package.json", "./"]
 

@@ -10,7 +10,6 @@ const searchEngineLogo = document.getElementById('search_logo')
 const retrievedSettings = JSON.parse(Settings_Config);
 const retrievedEngine = retrievedSettings.searchEngine;
 const retrievedProxy = retrievedSettings.DefaultProxy;
-
 let Engine;
 if (retrievedEngine == 'google') {
   Engine = 'https://www.google.com/search?q=%s'
@@ -137,4 +136,62 @@ if (rtheme == 'dark') {
   }
   document.getElementById('bar2').style.backgroundColor = 'rgb(36, 36, 36)';
   document.getElementById('bar2').style.color = 'white';
+}
+
+document.getElementById('opt').onclick = function() {
+  var optionExtra = document.getElementById('option-extra');
+  if (optionExtra.style.display === 'flex') {
+    optionExtra.style.display = 'none';
+  } else {
+    optionExtra.style.display = 'flex';
+  }
+}
+
+
+document.getElementById('settings').onclick = function() {
+  window.location.href = 'settings.html'
+}
+
+document.getElementById('games').onclick = function() {
+  document.getElementById('option-extra').innerHTML = '';
+  fetch('../assets/json/games.json')
+        .then(response => response.json())
+        .then(data => {
+            const jsonContainer = document.getElementById('option-extra');
+            data.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'boxy-toxy'
+                div.innerHTML = `<img src="${item.icon}">
+                <p>${item.name}</p>`;
+                const btn = document.createElement('button');
+                div.appendChild(btn)
+                btn.textContent = 'go';
+                jsonContainer.appendChild(div);
+
+                (function() {
+                  btn.onclick = function() {
+                      go(item.icon, item.name, item.proxy, item.url);
+                  };
+              })();
+            });
+        })
+        .catch(error => console.error('Error fetching JSON:', error));
+}
+
+function go(ico, nombre, proxy, url) {
+  const PR = (proxy === 'default') ? JSON.parse(localStorage.getItem('settings')).DefaultProxy : proxy;
+  const b2 = `${PR}=${btoa(url)}`;
+  
+  const config = {
+    fragment: b2,
+    name: nombre,
+    iconurl: ico
+  };
+  
+console.log(config)
+  sessionStorage.setItem('fragment', JSON.stringify(config));
+
+  setTimeout(() => {
+   window.location.href = './com.html';
+  }, 600);
 }

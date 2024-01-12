@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@300;400&family=Open+Sans&family=Raleway:wght@300&display=swap');
+
+        body {
+            text-align: center;
+            color: white;
+            background-color: white;
+            background-image: url('extraimages/texting_grayscale.png');
+            background-size: cover;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .txt-services {
+            flex-direction: column;
+            align-items: center;
+            display: flex;
+            margin-top: 15px;
+            gap: 15px;
+            height: 100vh;
+        }
+
+        .txt-service {
+            display: flex;
+            flex-direction: row;
+            width: 350px;
+            border-radius: 15px;
+            align-items: center;
+            padding: 0;
+            height: 100px;
+            background-color: #5865f2;
+        }
+
+        .txt-service img {
+            margin-left: 15px;
+            width: 55px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="txt-services">
+        <div class="txt-service" onclick="go('https://canary.discord.com/login')">
+            <img src="extraimages/discord.png">
+            <h1>Discord</h1>
+        </div>
+
+        <div class="txt-service" style="background-color: #2fa6dd; color: white;" onclick="go('https://web.telegram.org/a/')">
+            <img src="extraimages/Telegram_Logo.png">
+            <h1>Telegram</h1>
+        </div>
+    </div>
+    <script>
+const s_config = localStorage.getItem('settings');
+const rsettings = JSON.parse(s_config);
+const rProxy = rsettings.DefaultProxy;
+
+
+        function go(url) {
+            const newURL = window.location.protocol + '//' + window.location.host + '/go.html#' + rProxy + '=' + btoa(url);
+    window.location.href = newURL;
+        }
+    </script>
+</body>
+</html>

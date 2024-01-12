@@ -1,5 +1,5 @@
 services:
   - type: web
-    name: edu
+    name: EWB
     env: docker
     plan: free

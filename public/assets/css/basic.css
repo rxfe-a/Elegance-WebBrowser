@@ -249,7 +249,7 @@ text-align: center;
     flex-direction: row;
     width: 100%;
     height: 40px;
-    border: 2px #5a5a5a solid;
+    border: 1px #5a5a5a solid;
 }
 
 .X {
@@ -258,5 +258,5 @@ text-align: center;
     width: 50px;
     color: rgb(62, 62, 62);
     background-color: transparent;
-    border: 1px #5a5a5a solid;
+    border: 0.5px #5a5a5a solid;
 }

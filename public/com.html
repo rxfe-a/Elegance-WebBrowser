@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="assets/css/game.css">
+    <script src="assets/js/commercial.js"></script>
+</head>
+<body>
+    <iframe src="./go.html" id="commercial_frame"></iframe>
+    <div>
+        <img id="GameICO" alt="game" src="https://play-lh.googleusercontent.com/uJn2i9h7KxYQarC_c3K4qH6o7gLtflFnhD_dN14MNkzHJ1NeNFzCL69jpB5mT0vCoQs">
+        <h1 id="namefr">Slope</h1>
+        <img alt="back" src="./assets/img/back.png" class="btn-img" onclick="window.location.href = window.document.referrer">
+        <img alt="back" src="./assets/img/full.png" class="btn-cg" onclick="
+        document.getElementById('commercial_frame').requestFullscreen().catch(err => {
+        console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+    });
+        ">
+    </div>
+</body>
+</html>

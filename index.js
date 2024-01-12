@@ -4,7 +4,6 @@ import { createBareServer } from "@tomphttp/bare-server-node";
 import { createServer } from "node:http";
 import { hostname } from "node:os";
 import serveStatic from "serve-static";
-import connect from "connect";
 import path from "node:path";
 import axios from "axios";
 import express from "express";
@@ -12,7 +11,6 @@ import { uvPath } from "uv-2.0-pkg";
 import { dynamicPath } from "@nebula-services/dynamic";
 import bodyParser from 'body-parser';
 const apiKey = process.argv[2] || 'none';
-
 const headers = {
   'Content-Type': 'application/json',
   'Authorization': `Bearer ${apiKey}`
@@ -147,8 +145,9 @@ app.post('/ask', async (req, res) => {
     );
     const result = shuttleResponse.data;
     res.json(result);
+    console.log(result);
   } catch (error) {
-    console.error(error.response.data); // Log the detailed error message
+    console.error(error.response.data);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });

@@ -21,9 +21,9 @@
     "serve-static": "^1.15.0",
     "@tomphttp/bare-server-node": "^2.0.1",
     "express": "4.18.2",
-    "connect": "3.7.0",
     "@nebula-services/dynamic": "0.7.2-patch.2",
     "axios": "1.6.3",
-    "uv-2.0-pkg": "github:rxfe-a/uv-2.0-pkg#main"
+    "uv-2.0-pkg": "github:rxfe-a/uv-2.0-pkg#main",
+    "http-proxy-middleware": "2.0.6"
   }
 }
