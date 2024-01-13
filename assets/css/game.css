@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@300;400&family=Open+Sans&family=Raleway:wght@300&display=swap');
+
+        body {
+            background-color: #070707;
+            display: flex;
+            font-family: 'Montserrat', sans-serif;
+            align-items: center;
+            margin: 0;
+            justify-items: center;
+            flex-direction: column;
+        }
+
+        iframe {
+            background-color: white;
+            margin-top: 8px;
+            width: 95%;
+            border-radius: 9px;
+            border: none;
+            height: 86vh;
+        }
+
+        div {
+            align-items: center;
+            margin-top: 5px;
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: row;
+            width: 95%;
+            height: 50px;
+        }
+
+        #GameICO {
+            height: 50px;
+            width: 4%;
+            border-radius: 1502px;
+        }
+
+        h1 {
+            text-indent: 10%;
+            line-height: 50%;
+        }
+
+        .btn-img {
+            width: 40px;
+            margin-left: auto;
+        }
+        .btn-cg {
+            width: 40px;
+            margin-left: 3px;
+            height: 40px;
+        }
